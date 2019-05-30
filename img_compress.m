@@ -8,7 +8,7 @@ A=imread('image.jpg'); % modify accordingly
 X = double(rgb2gray(A));
 X0=X; % save the original image
 
-[Z,ratio]=svdcompress(X0,8,.9);
+[Z,ratio]=svdcompress(X0,b,p); %choose a b and p value. 
 figure
 colormap('gray');
    label=sprintf('SVD compression: ratio=%8.4f,error=%8.4f',ratio,norm(Z-X0,'fro')/norm(X0,'fro'));
